@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Forecasting</title>
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://img.freepik.com/premium-photo/delicious-pizza-images-generative-ai_995884-1286.jpg'); /* Add your pizza image URL here */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #333;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .result {
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Sales Forecasting Model</h1>
+        <form action="/predict" method="post">
+            <label for="date">Date:</label>
+            <input type="number" id="date" name="date" min="1" max="31" required>
+
+            <label for="month_name">Month Name:</label>
+            <input type="text" id="month_name" name="month_name" placeholder="e.g. January" required>
+
+            <!-- Hidden fields for day name, weekend, and time phase -->
+            <input type="hidden" id="day_name" name="day_name">
+            <input type="hidden" id="weekend" name="weekend">
+            <input type="hidden" id="time_phase" name="time_phase">
+
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if sales_forecast is not none %}
+        <div class="result">
+            <h2>Prediction Result:</h2>
+            <p>Expected Sales: <strong>${{ sales_forecast }}</strong></p>
+            <p>Expected Quantity: <strong>{{ another_metric }}</strong></p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+
+</html>
