@@ -54,7 +54,10 @@ Interactive interface where users can input data and get real-time sales predict
 
        python app.py
 5. Access the Application<br>
-Open your browser and navigate to `http://127.0.0.1:5000`.
+Open your browser and navigate to `http://127.0.0.1:5000`.<br>
+Below is a screenshot of the interactive web interface developed for the pizza sales forecasting model:
+![image](https://github.com/user-attachments/assets/a2981ab2-1581-4270-8fd4-8cd633d2188d)
+
 
 ## 📊 Key Insights
 - Pizza sales are influenced by temporal features such as the day of the week, time of day, and weekends.
