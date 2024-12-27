@@ -1,6 +1,5 @@
 # 🍕 Pizza Sales Forecasting Project <br>
 **Author** : Ansh Kapoor <br>
-
 ## 📄 Project Overview
 This project leverages machine learning to forecast pizza sales using a dataset sourced from Kaggle. The aim is to provide an accurate prediction model and an interactive web interface for user-friendly sales forecasting.<br> The model uses a Random Forest Regressor (RFR) with hyperparameter tuning to achieve high accuracy. The project includes data preprocessing, model training, evaluation, and deployment via a Flask web application.<br>
 
